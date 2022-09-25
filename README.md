@@ -1,2 +1,2 @@
 # oscp-arsenal
-Scripts, tools, useful libraries for OSCP 2022
+Scripts, tools, useful libraries,etc. for OSCP 2022
